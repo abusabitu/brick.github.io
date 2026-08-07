@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>One platform to run and grow your business | Brick</title>
-<meta name="description" content="From sourcing supply to selling and operations to funding your next order, Brick connects every part of a growing business — retailers, restaurants, manufacturers, and SMEs — in one ecosystem.">
+<meta name="description" content="Whether you sell it, cook it, or book it — Brick connects sourcing, selling, the kitchen, the diary, and the funding for your next order. Built for retailers, restaurants, salons, manufacturers, and SMEs.">
 <link rel="icon" type="image/png" href="images/brickicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +17,9 @@
      outcomes over modules, restrained motion + one signature moment.
      Palette : ink / paper / app-green accent / soft mist
      Type    : Sora (display) · Inter (body)
+
+     The four apps each own one colour, matching the real builds:
+       Business #1a7a4a · POS #2f80ed · Kitchen #37474f · Diary #6a3d7c
   ───────────────────────────────────────────────────────────────*/
   :root{
     --ink:#0f1512;
@@ -111,7 +114,7 @@
   .trust{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--mist)}
   .trust p{text-align:center;margin:0;color:var(--slate);font-size:.9rem;letter-spacing:.03em}
 
-  /* ── PROBLEM (customer-first, Square opens with the human) ── */
+  /* ── PROBLEM (customer-first, opens with the human) ── */
   .problem h2{max-width:18ch;margin-bottom:24px}
   .problem .lead{font-size:1.3rem}
   .problem .row{display:flex;flex-wrap:wrap;gap:10px 14px;margin-top:28px}
@@ -126,26 +129,62 @@
   .who .card h4{font-size:1.15rem;font-weight:700;margin-bottom:8px}
   .who .card p{margin:0;color:var(--slate);font-size:.94rem}
 
-  /* ── SIGNATURE: ecosystem connect animation ──────────── */
+  /* ── SHAPE-SHIFTER: the app fits the business ────────── */
+  .fits{background:var(--mist)}
+  .fits .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:48px}
+  .fits .sw{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;position:relative;overflow:hidden}
+  .fits .sw::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c,var(--green))}
+  .fits .sw h4{font-size:1.08rem;font-weight:700;margin-bottom:8px}
+  .fits .sw p{margin:0;color:var(--slate);font-size:.93rem}
+  .fits .sw .tick{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:700;color:var(--c,var(--green));margin-bottom:12px;letter-spacing:.04em;text-transform:uppercase}
+  .fits .sw .tick i{width:16px;height:16px;border-radius:5px;background:var(--c,var(--green));display:inline-block;flex:none;position:relative}
+  .fits .sw .tick i::after{content:'';position:absolute;left:5px;top:2.5px;width:4px;height:7px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+  .fits .note{margin-top:26px;color:var(--slate);font-size:.95rem;max-width:62ch}
+
+  /* ── SIGNATURE: the cycle ─────────────────────────────
+     Rebuilt as a LOOP, not a line. The old version put actors
+     (Supplier, Growth) and products (Brick Business, Brick Fund) on the
+     same rail, which read as four unrelated things. What actually
+     happens is a cycle: money buys stock, stock becomes sales, sales
+     fund the next order. Each stage now names the app that owns it.  */
   .eco{background:var(--ink);color:#fff;overflow:hidden}
   .eco .eyebrow{color:var(--green-soft)}
   .eco h2{max-width:15ch;margin-bottom:16px}
   .eco .lead{color:#aab2ac}
-  .eco-stage{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch;position:relative}
-  .eco-rail{position:absolute;top:50%;left:6%;right:6%;height:2px;background:rgba(255,255,255,.1);z-index:0}
-  .eco-rail .fill{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--green),#3fd089);transition:width 1.4s var(--ease)}
+  .eco-stage{margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch;position:relative}
+  .eco-rail{position:absolute;top:52px;left:7%;right:7%;height:2px;background:rgba(255,255,255,.1);z-index:0}
+  .eco-rail .fill{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--green),#3fd089);transition:width 1.6s var(--ease)}
   .eco.go .eco-rail .fill{width:100%}
-  .eco-node{position:relative;z-index:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:24px 18px;text-align:center;opacity:.35;transform:translateY(8px);transition:opacity .6s var(--ease),transform .6s var(--ease),border-color .6s,background .6s}
-  .eco-node .dot{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.25);margin:0 auto 16px;transition:background .5s,box-shadow .5s}
-  .eco-node h4{font-size:1.06rem;font-weight:700;margin-bottom:6px}
-  .eco-node p{margin:0;font-size:.84rem;color:#9aa29c;line-height:1.45}
-  .eco-node.lit{opacity:1;transform:none;border-color:rgba(63,208,137,.5);background:rgba(26,122,74,.16)}
+
+  .eco-node{position:relative;z-index:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:22px 18px 20px;opacity:.32;transform:translateY(10px);transition:opacity .6s var(--ease),transform .6s var(--ease),border-color .6s,background .6s}
+  .eco-node .step-n{display:block;font-family:Sora;font-weight:800;font-size:.72rem;letter-spacing:.14em;color:#6f7a72;margin-bottom:14px;transition:color .5s}
+  .eco-node .dot{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.25);margin:0 0 16px;transition:background .5s,box-shadow .5s}
+  .eco-node h4{font-size:1.08rem;font-weight:700;margin-bottom:7px}
+  .eco-node p{margin:0 0 16px;font-size:.85rem;color:#9aa29c;line-height:1.5}
+  .eco-node.lit{opacity:1;transform:none;border-color:rgba(63,208,137,.45);background:rgba(26,122,74,.14)}
   .eco-node.lit .dot{background:#3fd089;box-shadow:0 0 0 6px rgba(63,208,137,.18)}
+  .eco-node.lit .step-n{color:#3fd089}
+
+  /* which app owns this stage */
+  .eco-apps{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+  .eco-app{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;color:#d6dcd8;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:5px 10px;border-radius:999px;white-space:nowrap}
+  .eco-app i{width:7px;height:7px;border-radius:2px;background:var(--c);flex:none}
+
+  /* the loop back — what makes it a cycle rather than a queue */
+  .eco-loop{margin-top:22px;display:flex;align-items:center;gap:14px;color:#8a938c;font-size:.88rem;opacity:0;transform:translateY(8px);transition:opacity .7s var(--ease) 1.2s,transform .7s var(--ease) 1.2s}
+  .eco.go .eco-loop{opacity:1;transform:none}
+  .eco-loop .line{flex:1;height:1px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 8px,transparent 8px 16px)}
+  .eco-loop .badge{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(63,208,137,.35);background:rgba(26,122,74,.14);color:#c9e8d7;border-radius:999px;padding:8px 16px;font-weight:600;white-space:nowrap}
+  .eco-loop .badge span{font-size:1.05rem;line-height:1}
+
   @media(max-width:820px){
     .eco-stage{grid-template-columns:1fr;gap:14px}
-    .eco-rail{top:6%;bottom:6%;left:50%;right:auto;width:2px;height:auto}
-    .eco-rail .fill{height:0;width:100%;background:linear-gradient(180deg,var(--green),#3fd089);transition:height 1.4s var(--ease)}
+    .eco-rail{top:6%;bottom:6%;left:34px;right:auto;width:2px;height:auto}
+    .eco-rail .fill{height:0;width:100%;background:linear-gradient(180deg,var(--green),#3fd089);transition:height 1.6s var(--ease)}
     .eco.go .eco-rail .fill{height:100%}
+    .eco-node{padding-left:22px}
+    .eco-loop{flex-direction:column;align-items:stretch;text-align:center}
+    .eco-loop .line{display:none}
   }
 
   /* ── PRODUCT CHAPTERS (alternating, photo-led) ───────── */
@@ -165,7 +204,7 @@
     .shot{aspect-ratio:16/10}
   }
 
-  /* ── App UX glimpse (real Brick One screens: POS · Inventory · Brick Score) ── */
+  /* ── App UX glimpse (real Brick screens) ── */
   .shot.ux-shot{display:flex;align-items:center;justify-content:center;background:#fff;border:none;box-shadow:none;aspect-ratio:auto;border-radius:0;padding:20px 0}
   .phone-mock{position:relative;width:min(214px,72vw);aspect-ratio:9/18.4;background:var(--ink);border-radius:34px;padding:9px;box-shadow:0 34px 64px rgba(15,21,18,.28);
     --pg:#1A7A4A;--pgd:#135C38;--pgl:#E8F5EE;--pbg:#F6F8F7;--ibg:#F5F5F5;--warn:#FB8C00;--danger:#E53935;--slate2:#607D8B;--ink2:#20261F;--sub:#8A938C}
@@ -287,6 +326,60 @@
   .real-shot-img.loaded{display:block}
   .ux-shot.has-real-image .phone-mock{display:none}
 
+  /* ── Brick POS phone mockup — the till, blue ── */
+  .phone-mock.till-mock{--pg:#2F80ED;--pgd:#2360B2;--pgl:#E8F1FD}
+  .tm-tables{background:#F5F7FA;height:100%;display:flex;flex-direction:column}
+  .tm-top{background:var(--pg);color:#fff;padding:6px 8px 8px}
+  .tm-top-title{font-size:.54rem;font-weight:800;display:block;margin-bottom:4px}
+  .tm-top-sub{font-size:.36rem;opacity:.85}
+  .tm-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:7px 8px}
+  .tm-table{background:#fff;border:1px solid #e6eaee;border-radius:8px;padding:7px;display:flex;flex-direction:column;gap:3px}
+  .tm-table.busy{border-color:rgba(47,128,237,.45);background:rgba(47,128,237,.06)}
+  .tm-tname{font-size:.44rem;font-weight:800;color:var(--ink2)}
+  .tm-tmeta{font-size:.32rem;color:var(--sub)}
+  .tm-tstate{font-size:.3rem;font-weight:700;color:var(--pg)}
+  .tm-tstate.free{color:var(--sub)}
+  .tm-fab{margin:auto 8px 8px;background:var(--pg);color:#fff;border-radius:8px;text-align:center;font-size:.42rem;font-weight:700;padding:6px 0}
+
+  /* ── Brick KDS phone mockup — slate ── */
+  .phone-mock.kds-mock{--pg:#37474F;--pgd:#263238}
+  .kd-board{background:#263238;height:100%;display:flex;flex-direction:column}
+  .kd-top{background:#37474F;color:#fff;padding:6px 8px;display:flex;align-items:center;gap:6px}
+  .kd-top-title{flex:1;font-size:.5rem;font-weight:800}
+  .kd-station{background:rgba(255,255,255,.16);border-radius:6px;padding:2px 6px;font-size:.34rem;font-weight:700}
+  .kd-tickets{padding:7px 8px;display:flex;flex-direction:column;gap:6px}
+  .kd-ticket{background:#fff;border-radius:8px;padding:7px 8px;border-left:4px solid var(--tc,#2E7D32);display:flex;flex-direction:column;gap:4px}
+  .kd-tk-top{font-size:.32rem;color:#8A938C;font-weight:600}
+  .kd-tk-item{font-size:.5rem;font-weight:800;color:#20261F;line-height:1.1}
+  .kd-tk-bottom{display:flex;align-items:center;gap:6px}
+  .kd-timer{font-size:.44rem;font-weight:800;color:var(--tc,#2E7D32)}
+  .kd-btn{margin-left:auto;background:#37474F;color:#fff;font-size:.34rem;font-weight:800;border-radius:6px;padding:3px 8px}
+  .kd-btn.done{background:transparent;color:#2E7D32;border:1px solid rgba(46,125,50,.4)}
+
+  /* ── Brick Appointments phone mockup — plum ── */
+  .phone-mock.appt-mock{--pg:#6A3D7C;--pgd:#4E2B5C;--pgl:#F3ECF6}
+  .ap-day{background:#fff;height:100%;display:flex;flex-direction:column}
+  .ap-top{background:var(--pg);color:#fff;padding:6px 8px;display:flex;align-items:center;gap:6px}
+  .ap-top-title{flex:1;font-size:.52rem;font-weight:800}
+  .ap-cal{font-size:.4rem;opacity:.9}
+  .ap-rows{display:flex;flex-direction:column}
+  .ap-row{display:flex;gap:7px;padding:7px 8px;border-bottom:1px solid #f0eef2;align-items:center}
+  .ap-time{width:30px;flex:none;display:flex;flex-direction:column}
+  .ap-time b{font-size:.44rem;font-weight:800;color:var(--ink2)}
+  .ap-time span{font-size:.3rem;color:var(--sub)}
+  .ap-mid{flex:1;min-width:0}
+  .ap-cust{display:block;font-size:.44rem;font-weight:700;color:var(--ink2)}
+  .ap-svc{display:block;font-size:.32rem;color:var(--sub)}
+  .ap-state{font-size:.3rem;font-weight:800;padding:2px 5px;border-radius:6px;white-space:nowrap}
+  .ap-state.booked{color:#607D8B;background:rgba(96,125,139,.12)}
+  .ap-state.chair{color:#EF6C00;background:rgba(239,108,0,.12)}
+  .ap-state.done{color:#1A7A4A;background:rgba(26,122,74,.12)}
+  .ap-btn{font-size:.32rem;font-weight:800;color:#fff;background:var(--pg);border-radius:6px;padding:3px 7px;white-space:nowrap}
+  .ap-clock{margin-top:auto;background:var(--pgl);border-top:1px solid #ece5f0;padding:7px 8px;display:flex;align-items:center;gap:6px}
+  .ap-clock-name{font-size:.4rem;font-weight:700;color:var(--ink2);display:block}
+  .ap-clock-sub{font-size:.32rem;color:var(--sub)}
+  .ap-clock-btn{margin-left:auto;background:var(--pg);color:#fff;font-size:.34rem;font-weight:800;border-radius:6px;padding:4px 8px}
+
   /* ── Brick Fund phone mockup — real black/grey/white theme ── */
   .phone-mock.fund-mock{--pg:#111315;--pgd:#000;--blue:#2196F3}
   .bf-home{background:#fff;height:100%;display:flex;flex-direction:column;padding:9px}
@@ -344,14 +437,15 @@
   .bf-amounts{display:flex;gap:8px;font-size:.28rem;color:#999}
   .bf-amounts b{color:#111;font-weight:700}
 
-
-  /* ── PRODUCTS: Square-style accordion + sticky visual (scales to N products) ── */
+  /* ── PRODUCTS: accordion + sticky visual (scales to N products) ── */
   .pd-layout{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:start;margin-top:52px}
   .pd-list{display:flex;flex-direction:column}
   .pd-item{border-bottom:1px solid var(--line)}
   .pd-item:first-child{border-top:1px solid var(--line)}
-  .pd-item-head{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:space-between;width:100%;padding:22px 4px;font-family:Sora;font-weight:700;font-size:1.18rem;color:var(--ink)}
-  .pd-toggle{font-family:Sora;font-weight:400;font-size:1.5rem;color:var(--slate);line-height:1}
+  .pd-item-head{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:space-between;width:100%;padding:22px 4px;font-family:Sora;font-weight:700;font-size:1.18rem;color:var(--ink);gap:14px}
+  .pd-head-l{display:flex;align-items:center;gap:12px;min-width:0}
+  .pd-swatch{width:10px;height:10px;border-radius:3px;background:var(--c,var(--green));flex:none}
+  .pd-toggle{font-family:Sora;font-weight:400;font-size:1.5rem;color:var(--slate);line-height:1;flex:none}
   .pd-item-body-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}
   .pd-item.open .pd-item-body-wrap{grid-template-rows:1fr}
   .pd-item-body{overflow:hidden}
@@ -385,7 +479,7 @@
   .step h4{font-size:1.3rem;font-weight:700;margin:14px 0 8px}
   .step p{margin:0;color:var(--slate)}
 
-  /* ── TESTIMONIAL (single, large —  uses big quotes) ── */
+  /* ── TESTIMONIAL ─────────────────────────────────────── */
   .quote{background:var(--green);color:#fff}
   .quote blockquote{font-family:Sora;font-weight:700;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.22;letter-spacing:-.02em;margin:0;max-width:20ch}
   .quote cite{display:block;margin-top:28px;font-style:normal;font-size:1rem;opacity:.85}
@@ -405,6 +499,15 @@
   .app-card .stores img{height:46px;width:auto}
   .app-card .soon-pill{align-self:flex-start;font-family:Sora;font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--green);background:var(--green-soft);padding:8px 16px;border-radius:999px}
   @media(max-width:820px){.app-cards{grid-template-columns:1fr;max-width:420px}.app-card .app-line{flex:none}}
+
+  /* companion apps strip under the two main cards */
+  .companions{max-width:720px;margin:34px auto 0;text-align:left;border:1px dashed var(--line);border-radius:var(--r);padding:24px 26px;background:var(--mist)}
+  .companions h4{font-size:1.02rem;font-weight:700;margin-bottom:6px}
+  .companions>p{margin:0 0 18px;color:var(--slate);font-size:.93rem}
+  .companions ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+  .companions li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--slate)}
+  .companions li i{width:9px;height:9px;border-radius:3px;background:var(--c);flex:none;margin-top:6px}
+  .companions li b{display:block;color:var(--ink);font-family:Sora;font-weight:700;font-size:.95rem}
 
   /* ── Footer ──────────────────────────────────────────── */
   footer{padding:64px 0 44px;border-top:1px solid var(--line)}
@@ -455,7 +558,7 @@
       <div class="wrap hero-grid">
         <div>
           <h1 class="h-xl">Everything your business runs on, in one place.</h1>
-          <p class="lead">Source your supply, run your day, and fund your next order — however you make your money. Brick fits the way you already work.</p>
+          <p class="lead">Whether you sell it, cook it, or book it — source your supply, run your day, and fund your next order. Brick fits the way you already work.</p>
           <div class="hero-cta">
             <a class="btn solid" href="#download">Get the app</a>
             <a class="btn line" href="#ecosystem">See how it works</a>
@@ -466,7 +569,7 @@
           <div class="ah-toast" id="ahToast"><span class="ah-check">✓</span> Order synced to inventory</div>
           <div class="ah-wrap" id="appHighlight">
             <div class="app-highlight">
-              <div class="ah-top"><span class="ah-dot"></span>Brick One · Live</div>
+              <div class="ah-top"><span class="ah-dot"></span>Brick Business · Live</div>
               <div class="ah-figure">
                 <span class="ah-num" id="ahNum" data-target="128400">₦0</span>
                 <span class="ah-label">Today's sales</span>
@@ -484,16 +587,16 @@
       </div>
     </section>
 
-    <div class="trust"><div class="wrap"><p>Trusted by retailers, restaurants, manufacturers, and SMEs across Nigeria</p></div></div>
+    <div class="trust"><div class="wrap"><p>Trusted by retailers, restaurants, salons, manufacturers, and SMEs across Nigeria</p></div></div>
 
     <!-- ── PROBLEM (start with the human) ────────────── -->
     <section class="problem">
       <div class="wrap reveal">
         <div class="eyebrow">The reality of running a business</div>
         <h2 class="h-lg">You're juggling everything at once.</h2>
-        <p class="lead">Sourcing what you need, keeping count of it, taking sales, and finding the cash for your next run — across tools that don't talk to each other. The gaps between them are where your time and money slip away.</p>
+        <p class="lead">Sourcing what you need, keeping count of it, taking sales, getting orders out, and finding the cash for your next run — across tools that don't talk to each other. The gaps between them are where your time and money slip away.</p>
         <div class="row">
-          <b>Suppliers.</b><b>Inventory.</b><b>Sales.</b><b>Cash flow.</b><b>Operations.</b>
+          <b>Suppliers.</b><b>Inventory.</b><b>Sales.</b><b>The kitchen.</b><b>The diary.</b><b>Cash flow.</b>
         </div>
       </div>
     </section>
@@ -507,71 +610,193 @@
         </div>
         <div class="grid reveal">
           <div class="card"><h4>Retailers</h4><p>Shops and stores managing fast-moving stock and daily sales.</p></div>
-          <div class="card"><h4>Restaurants</h4><p>Kitchens and cafés tracking ingredients, supplies, and orders.</p></div>
+          <div class="card"><h4>Restaurants</h4><p>Kitchens and cafés turning ingredients into orders, ticket by ticket.</p></div>
+          <div class="card"><h4>Salons &amp; services</h4><p>Barbers, clinics, and studios selling time by the appointment.</p></div>
           <div class="card"><h4>Manufacturers</h4><p>Producers sourcing raw materials and supplying down the chain.</p></div>
           <div class="card"><h4>SMEs</h4><p>Any growing business that needs supply, operations, and capital in one place.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- ── SIGNATURE: ECOSYSTEM ──────────────────────── -->
+    <!-- ── IT FITS THE BUSINESS (capabilities, told as outcomes) ── -->
+    <section class="fits">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">One app, shaped to you</div>
+          <h2 class="h-lg">Switch on what you actually do.</h2>
+          <p class="lead">Brick asks four plain questions about your business and shapes itself to the answers. A shop that never books anyone never sees a calendar.</p>
+        </div>
+        <div class="grid reveal">
+          <div class="sw" style="--c:#2F80ED">
+            <span class="tick"><i></i>Orders belong to a place</span>
+            <h4>Tables, bays, chairs</h4>
+            <p>Open an order against a table and read the floor at a glance.</p>
+          </div>
+          <div class="sw" style="--c:#37474F">
+            <span class="tick"><i></i>A kitchen makes the food</span>
+            <h4>Tickets to the pass</h4>
+            <p>Orders go straight to the station that cooks them and come back ready.</p>
+          </div>
+          <div class="sw" style="--c:#6A3D7C">
+            <span class="tick"><i></i>Customers book time</span>
+            <h4>A diary that can't double-book</h4>
+            <p>Free times come from real rotas, and the same slot is never sold twice.</p>
+          </div>
+          <div class="sw" style="--c:#1A7A4A">
+            <span class="tick"><i></i>Items have choices</span>
+            <h4>Sizes and extras</h4>
+            <p>No onions, large, oat milk — priced correctly, every time.</p>
+          </div>
+        </div>
+        <p class="note">Everything is off until you turn it on, so the app stays as simple as your business is.</p>
+      </div>
+    </section>
+
+    <!-- ── SIGNATURE: THE CYCLE ──────────────────────── -->
     <section class="eco" id="ecosystem">
       <div class="wrap">
         <div class="reveal">
           <div class="eyebrow">One connected ecosystem</div>
-          <h2 class="h-lg">Every piece, working together.</h2>
-          <p class="lead">Every Brick product owns one part of your day and passes cleanly to the next — so a single order flows from your supplier all the way to your growth.</p>
+          <h2 class="h-lg">Your money goes round, not out.</h2>
+          <p class="lead">Cash buys stock, stock becomes sales, and sales fund the next order. Brick owns every step of that loop — so nothing is retyped, and nothing falls through the gap between one tool and the next.</p>
         </div>
+
         <div class="eco-stage" id="eco-stage">
           <div class="eco-rail"><div class="fill"></div></div>
-          <div class="eco-node"><div class="dot"></div><h4>Supplier</h4><p>Verified suppliers post what they've got.</p></div>
-          <div class="eco-node"><div class="dot"></div><h4>Brick One</h4><p>You source, sell, and run everything — market included.</p></div>
-          <div class="eco-node"><div class="dot"></div><h4>Brick Fund</h4><p>Funders finance the inventory outlets need.</p></div>
-          <div class="eco-node"><div class="dot"></div><h4>Growth</h4><p>You're always ready to sell more.</p></div>
+
+          <div class="eco-node">
+            <span class="step-n">01</span>
+            <div class="dot"></div>
+            <h4>Source</h4>
+            <p>Buy from verified suppliers in the built-in market, at prices you can compare.</p>
+            <div class="eco-apps">
+              <span class="eco-app" style="--c:#1A7A4A"><i></i>Brick Business</span>
+            </div>
+          </div>
+
+          <div class="eco-node">
+            <span class="step-n">02</span>
+            <div class="dot"></div>
+            <h4>Run the day</h4>
+            <p>Sell it, cook it, or book it — whichever your business does, on the screen built for it.</p>
+            <div class="eco-apps">
+              <span class="eco-app" style="--c:#2F80ED"><i></i>POS</span>
+              <span class="eco-app" style="--c:#37474F"><i></i>KDS</span>
+              <span class="eco-app" style="--c:#6A3D7C"><i></i>Appointments</span>
+            </div>
+          </div>
+
+          <div class="eco-node">
+            <span class="step-n">03</span>
+            <div class="dot"></div>
+            <h4>One set of books</h4>
+            <p>Every sale lands in the same place, stock included — so you always know what you really made.</p>
+            <div class="eco-apps">
+              <span class="eco-app" style="--c:#1A7A4A"><i></i>Brick Business</span>
+            </div>
+          </div>
+
+          <div class="eco-node">
+            <span class="step-n">04</span>
+            <div class="dot"></div>
+            <h4>Fund the next order</h4>
+            <p>A track record you didn't have to assemble. Funders back your next run on the strength of it.</p>
+            <div class="eco-apps">
+              <span class="eco-app" style="--c:#111315"><i></i>Brick Fund</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="eco-loop">
+          <span class="badge"><span>↻</span> And round again — bigger each time</span>
+          <span class="line"></span>
+          <span>Every cycle you run makes the next one easier to fund.</span>
         </div>
       </div>
     </section>
 
-     <!-- ── PRODUCT CHAPTERS ──────────────────────────── -->
+    <!-- ── PRODUCT CHAPTERS ──────────────────────────── -->
 
     <section id="products">
       <div class="wrap">
         <div class="reveal">
-          <div class="eyebrow">One app, every part of your business</div>
+          <div class="eyebrow">One system, the right app for each job</div>
           <h2 class="h-lg">See your whole business click into place.</h2>
         </div>
         <div class="pd-layout reveal">
           <div class="pd-list">
-            <div class="pd-item open" data-target="pos">
+
+            <div class="pd-item open" data-target="one" style="--c:#1A7A4A">
               <button class="pd-item-head" type="button">
-                <span>Run every part of your business</span>
+                <span class="pd-head-l"><span class="pd-swatch"></span>Run every part of your business</span>
                 <span class="pd-toggle">−</span>
               </button>
               <div class="pd-item-body-wrap">
                 <div class="pd-item-body">
-                  <p>From the moment stock arrives to the moment it's sold, Brick One keeps purchasing, inventory, production, sales, and finance working together.</p>
-                  <ul class="pd-tags"><li>Point of sale</li><li>Inventory</li><li>Procurement</li><li>Production</li><li>Finance</li><li>Analytics</li></ul>
+                  <p>From the moment stock arrives to the moment it's sold, Brick Business keeps purchasing, inventory, production, sales, and finance working together.</p>
+                  <ul class="pd-tags"><li>Inventory</li><li>Procurement</li><li>Production</li><li>Finance</li><li>Analytics</li><li>Brick Score</li></ul>
                 </div>
               </div>
             </div>
-            <div class="pd-item" data-target="fund">
+
+            <div class="pd-item" data-target="till" style="--c:#2F80ED">
               <button class="pd-item-head" type="button">
-                <span>Invest in growing businesses</span>
+                <span class="pd-head-l"><span class="pd-swatch"></span>Sell fast at the counter</span>
                 <span class="pd-toggle">+</span>
               </button>
               <div class="pd-item-body-wrap">
                 <div class="pd-item-body">
-                  <p>Fund inventory for trusted businesses, follow every stage from purchase to sale, and earn transparent returns backed by real business activity.</p>
+                  <p>Brick POS is a till your staff can use on their first shift. Scan, ring up, split the payment, print the receipt — and every sale updates your stock as it happens.</p>
+                  <ul class="pd-tags"><li>Scan &amp; sell</li><li>Split payments</li><li>Tables &amp; tabs</li><li>Shifts &amp; cash-up</li><li>Receipts</li></ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="pd-item" data-target="kitchen" style="--c:#37474F">
+              <button class="pd-item-head" type="button">
+                <span class="pd-head-l"><span class="pd-swatch"></span>Get orders out of the kitchen</span>
+                <span class="pd-toggle">+</span>
+              </button>
+              <div class="pd-item-body-wrap">
+                <div class="pd-item-body">
+                  <p>Brick KDS puts orders on the screen by the pass, in the order they came. Mark a dish ready and the ingredients come out of stock and the finished plate goes in — no double counting, no paper tickets.</p>
+                  <ul class="pd-tags"><li>Live ticket board</li><li>By station</li><li>Recipes &amp; portions</li><li>Waste recorded</li></ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="pd-item" data-target="diary" style="--c:#6A3D7C">
+              <button class="pd-item-head" type="button">
+                <span class="pd-head-l"><span class="pd-swatch"></span>Fill the diary, not the notebook</span>
+                <span class="pd-toggle">+</span>
+              </button>
+              <div class="pd-item-body-wrap">
+                <div class="pd-item-body">
+                  <p>Brick Appointments shows who's coming, when, and who's serving them. Free times come from your team's real hours, so the same slot can never be sold twice — and payment goes through the same till as everything else.</p>
+                  <ul class="pd-tags"><li>Day book</li><li>Staff rota</li><li>Clock in &amp; breaks</li><li>No double-booking</li><li>Take payment</li></ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="pd-item" data-target="fund" style="--c:#111315">
+              <button class="pd-item-head" type="button">
+                <span class="pd-head-l"><span class="pd-swatch"></span>Invest in growing businesses</span>
+                <span class="pd-toggle">+</span>
+              </button>
+              <div class="pd-item-body-wrap">
+                <div class="pd-item-body">
+                  <p>Brick Fund lets you finance inventory for trusted businesses, follow every stage from purchase to sale, and earn transparent returns backed by real business activity.</p>
                   <ul class="pd-tags"><li>Choose businesses to back</li><li>Finance real inventory</li><li>Follow every sale</li><li>See your returns grow</li></ul>
                 </div>
               </div>
             </div>
+
           </div>
           <div class="pd-visual">
 
-            <!-- Brick One visual -->
-            <div class="shot ux-shot active" data-visual="pos">
-              <img class="real-shot-img" src="images/brickone_shot.jpg" alt="Brick One"
+            <!-- Brick Business visual -->
+            <div class="shot ux-shot active" data-visual="one">
+              <img class="real-shot-img" src="images/brickone_shot.jpg" alt="Brick Business"
                    onload="this.classList.add('loaded');this.closest('.ux-shot').classList.add('has-real-image')"
                    onerror="this.remove()">
               <div class="phone-mock">
@@ -670,6 +895,257 @@
                             <span class="rs-opps-title">Biggest opportunities</span>
                             <div class="rs-opp">→ Recount stock weekly (about +3)</div>
                             <div class="rs-opp">→ Reduce waste on perishables (about +6)</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="ux-dots"><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Brick POS visual — the till -->
+            <div class="shot ux-shot" data-visual="till">
+              <img class="real-shot-img" src="images/brickpos_shot.jpg" alt="Brick POS"
+                   onload="this.classList.add('loaded');this.closest('.ux-shot').classList.add('has-real-image')"
+                   onerror="this.remove()">
+              <div class="phone-mock till-mock">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="ux-panels">
+
+                    <!-- Screen 1 — the till -->
+                    <div class="ux-panel p1">
+                      <div class="real-pos">
+                        <div class="rp-topbar">
+                          <span class="ico-menu"><i></i><i></i><i></i></span>
+                          <span class="rp-title">Brick POS</span>
+                          <span class="rp-shift">Shift open</span>
+                        </div>
+                        <div class="rp-search">
+                          <span class="ico-search"></span>
+                          <span class="rp-search-ph">Scan or search…</span>
+                          <span class="rp-scanbtn"><span class="ico-scan"><i></i><i></i><i></i><i></i></span></span>
+                        </div>
+                        <div class="rp-rows">
+                          <div class="rp-row"><span class="rp-item-name">Jollof Rice</span><span class="rp-stepper">− 2 +</span><b>₦7,000</b></div>
+                          <div class="rp-row"><span class="rp-item-name">Chapman</span><span class="rp-stepper">− 2 +</span><b>₦3,000</b></div>
+                        </div>
+                        <div class="rp-cartbar">
+                          <span class="ico-cart"></span>
+                          <span class="rp-count">4 items</span>
+                          <b class="rp-total">₦10,000</b>
+                          <span class="rp-checkout">Checkout</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Screen 2 — tables -->
+                    <div class="ux-panel p2">
+                      <div class="tm-tables">
+                        <div class="tm-top">
+                          <span class="tm-top-title">Tables</span>
+                          <span class="tm-top-sub">3 open · 1 ready to pay</span>
+                        </div>
+                        <div class="tm-grid">
+                          <div class="tm-table busy"><span class="tm-tname">Table 4</span><span class="tm-tmeta">2 items · ₦10,000</span><span class="tm-tstate">In service</span></div>
+                          <div class="tm-table busy"><span class="tm-tname">Table 7</span><span class="tm-tmeta">5 items · ₦24,500</span><span class="tm-tstate">Ready to pay</span></div>
+                          <div class="tm-table busy"><span class="tm-tname">Bar 2</span><span class="tm-tmeta">1 item · ₦1,500</span><span class="tm-tstate">In service</span></div>
+                          <div class="tm-table"><span class="tm-tname">Table 9</span><span class="tm-tmeta">—</span><span class="tm-tstate free">Free</span></div>
+                        </div>
+                        <div class="tm-fab">+ New order</div>
+                      </div>
+                    </div>
+
+                    <!-- Screen 3 — cash up -->
+                    <div class="ux-panel p3">
+                      <div class="real-score">
+                        <div class="rs-headline" style="background:linear-gradient(135deg,#2F80ED,rgba(47,128,237,.78))">
+                          <div class="rs-hl-top"><span>Close shift</span><span class="rs-pill">Shift #4</span></div>
+                          <div class="rs-hl-score"><b>₦186k</b><span class="rs-band" style="font-size:.42rem">taken today</span></div>
+                          <div class="rs-hl-sub">42 sales · 3 refunds · opened 08:12</div>
+                        </div>
+                        <div class="rs-pillar">
+                          <div class="rs-pillar-top"><span>Payments</span></div>
+                          <div class="rs-rows">
+                            <div class="rs-row"><span>Cash</span><div class="rs-bar"><i style="--w:46%"></i></div><b>46</b></div>
+                            <div class="rs-row"><span>Transfer</span><div class="rs-bar"><i style="--w:38%"></i></div><b>38</b></div>
+                            <div class="rs-row"><span>Card</span><div class="rs-bar"><i style="--w:16%"></i></div><b>16</b></div>
+                          </div>
+                          <div class="rs-opps">
+                            <span class="rs-opps-title">Drawer</span>
+                            <div class="rs-opp">Counted ₦85,600 · expected ₦85,600</div>
+                            <div class="rs-opp">→ Balanced. Nothing to explain.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="ux-dots"><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Brick KDS visual -->
+            <div class="shot ux-shot" data-visual="kitchen">
+              <img class="real-shot-img" src="images/brickkds_shot.jpg" alt="Brick KDS"
+                   onload="this.classList.add('loaded');this.closest('.ux-shot').classList.add('has-real-image')"
+                   onerror="this.remove()">
+              <div class="phone-mock kds-mock">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="ux-panels">
+
+                    <!-- Screen 1 — the board, tickets waiting -->
+                    <div class="ux-panel p1">
+                      <div class="kd-board">
+                        <div class="kd-top">
+                          <span class="kd-top-title">Brick KDS</span>
+                          <span class="kd-station">Grill</span>
+                        </div>
+                        <div class="kd-tickets">
+                          <div class="kd-ticket" style="--tc:#2E7D32">
+                            <span class="kd-tk-top">Table 4</span>
+                            <span class="kd-tk-item">Jollof Rice ×2</span>
+                            <div class="kd-tk-bottom"><span class="kd-timer">02:14</span><span class="kd-btn">Ready</span></div>
+                          </div>
+                          <div class="kd-ticket" style="--tc:#EF6C00">
+                            <span class="kd-tk-top">Table 7</span>
+                            <span class="kd-tk-item">Suya Platter ×1</span>
+                            <div class="kd-tk-bottom"><span class="kd-timer">06:48</span><span class="kd-btn">Ready</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Screen 2 — one marked ready -->
+                    <div class="ux-panel p2">
+                      <div class="kd-board">
+                        <div class="kd-top">
+                          <span class="kd-top-title">Brick KDS</span>
+                          <span class="kd-station">Grill</span>
+                        </div>
+                        <div class="kd-tickets">
+                          <div class="kd-ticket" style="--tc:#2E7D32">
+                            <span class="kd-tk-top">Table 4 · on the pass</span>
+                            <span class="kd-tk-item">Jollof Rice ×2</span>
+                            <div class="kd-tk-bottom"><span class="kd-timer">02:31</span><span class="kd-btn done">READY</span></div>
+                          </div>
+                          <div class="kd-ticket" style="--tc:#C62828">
+                            <span class="kd-tk-top">Table 7</span>
+                            <span class="kd-tk-item">Suya Platter ×1</span>
+                            <div class="kd-tk-bottom"><span class="kd-timer">11:02</span><span class="kd-btn">Ready</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Screen 3 — stock moved -->
+                    <div class="ux-panel p3">
+                      <div class="real-score">
+                        <div class="rs-headline" style="background:linear-gradient(135deg,#37474F,rgba(55,71,79,.78))">
+                          <div class="rs-hl-top"><span>Stock moved</span><span class="rs-pill">Automatic</span></div>
+                          <div class="rs-hl-sub" style="margin-top:4px">Marking a dish ready moves the ingredients out and the finished plate in — counted once, never twice.</div>
+                        </div>
+                        <div class="rs-pillar">
+                          <div class="rs-pillar-top"><span>Jollof Rice ×2</span></div>
+                          <div class="rs-rows">
+                            <div class="rs-row"><span>Rice</span><div class="rs-bar warn"><i style="--w:70%"></i></div><b>−1.2kg</b></div>
+                            <div class="rs-row"><span>Tomato</span><div class="rs-bar warn"><i style="--w:52%"></i></div><b>−0.6kg</b></div>
+                            <div class="rs-row"><span>Plated</span><div class="rs-bar"><i style="--w:100%"></i></div><b>+2</b></div>
+                          </div>
+                          <div class="rs-opps">
+                            <span class="rs-opps-title">And when it's served</span>
+                            <div class="rs-opp">→ The plate leaves stock. Books balance.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="ux-dots"><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Brick Appointments visual -->
+            <div class="shot ux-shot" data-visual="diary">
+              <img class="real-shot-img" src="images/brickappointments_shot.jpg" alt="Brick Appointments"
+                   onload="this.classList.add('loaded');this.closest('.ux-shot').classList.add('has-real-image')"
+                   onerror="this.remove()">
+              <div class="phone-mock appt-mock">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="ux-panels">
+
+                    <!-- Screen 1 — today's book -->
+                    <div class="ux-panel p1">
+                      <div class="ap-day">
+                        <div class="ap-top"><span class="ap-top-title">Today</span><span class="ap-cal">▤</span></div>
+                        <div class="ap-rows">
+                          <div class="ap-row">
+                            <span class="ap-time"><b>09:00</b><span>45 min</span></span>
+                            <span class="ap-mid"><span class="ap-cust">Ahmed</span><span class="ap-svc">Haircut · Musa</span></span>
+                            <span class="ap-btn">Start</span>
+                          </div>
+                          <div class="ap-row">
+                            <span class="ap-time"><b>10:00</b><span>30 min</span></span>
+                            <span class="ap-mid"><span class="ap-cust">Fatima</span><span class="ap-svc">Manicure · Sade</span></span>
+                            <span class="ap-state chair">In chair</span>
+                          </div>
+                          <div class="ap-row">
+                            <span class="ap-time"><b>11:00</b><span>45 min</span></span>
+                            <span class="ap-mid"><span class="ap-cust">Chidi</span><span class="ap-svc">Haircut · Musa</span></span>
+                            <span class="ap-state booked">Booked</span>
+                          </div>
+                        </div>
+                        <div class="ap-clock">
+                          <span><span class="ap-clock-name">Musa</span><span class="ap-clock-sub">3h 20m today</span></span>
+                          <span class="ap-clock-btn">Clock out</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Screen 2 — free times -->
+                    <div class="ux-panel p2">
+                      <div class="ap-day">
+                        <div class="ap-top"><span class="ap-top-title">New booking</span></div>
+                        <div style="padding:8px;display:flex;flex-direction:column;gap:6px">
+                          <div class="ri-item" style="margin:0"><div class="ri-item-body"><span class="ri-name">Haircut · 45 min · ₦10,000</span><span class="ri-cat">With Musa · Tue 12 Aug</span></div></div>
+                          <span style="font-size:.36rem;font-weight:800;color:#6A3D7C;letter-spacing:.05em">FREE TIMES</span>
+                          <div style="display:flex;flex-wrap:wrap;gap:4px">
+                            <span class="ap-state" style="background:rgba(106,61,124,.1);color:#6A3D7C;font-size:.36rem;padding:4px 8px">09:00</span>
+                            <span class="ap-state" style="background:rgba(106,61,124,.1);color:#6A3D7C;font-size:.36rem;padding:4px 8px">09:15</span>
+                            <span class="ap-state" style="background:rgba(106,61,124,.1);color:#6A3D7C;font-size:.36rem;padding:4px 8px">11:45</span>
+                            <span class="ap-state" style="background:rgba(106,61,124,.1);color:#6A3D7C;font-size:.36rem;padding:4px 8px">13:30</span>
+                            <span class="ap-state" style="background:rgba(106,61,124,.1);color:#6A3D7C;font-size:.36rem;padding:4px 8px">14:15</span>
+                            <span class="ap-state" style="background:rgba(106,61,124,.1);color:#6A3D7C;font-size:.36rem;padding:4px 8px">15:45</span>
+                          </div>
+                          <span style="font-size:.32rem;color:#8A938C;line-height:1.4">Taken from Musa's real hours — lunch and existing bookings already removed.</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Screen 3 — no double-booking -->
+                    <div class="ux-panel p3">
+                      <div class="real-score">
+                        <div class="rs-headline" style="background:linear-gradient(135deg,#6A3D7C,rgba(106,61,124,.78))">
+                          <div class="rs-hl-top"><span>Sold once</span><span class="rs-pill">Always</span></div>
+                          <div class="rs-hl-sub" style="margin-top:4px">Two people can tap the same time on two phones. Only one booking is ever taken.</div>
+                        </div>
+                        <div class="rs-pillar">
+                          <div class="rs-pillar-top"><span>10:00 · Musa</span></div>
+                          <div class="rs-rows">
+                            <div class="rs-row"><span>Reception</span><div class="rs-bar"><i style="--w:100%"></i></div><b>✓</b></div>
+                            <div class="rs-row"><span>Front desk</span><div class="rs-bar warn"><i style="--w:100%"></i></div><b class="warn">—</b></div>
+                          </div>
+                          <div class="rs-opps">
+                            <span class="rs-opps-title">What the second person sees</span>
+                            <div class="rs-opp">→ "Already booked — times reloaded."</div>
+                            <div class="rs-opp">Not an error. Someone was simply quicker.</div>
                           </div>
                         </div>
                       </div>
@@ -794,6 +1270,8 @@
         <div class="grid reveal">
           <div class="oc"><h3>Never run out.</h3><p>Live stock that updates with every sale and tells you what to reorder.</p></div>
           <div class="oc"><h3>Skip the phone calls.</h3><p>A built-in marketplace of verified supply, with prices you can compare.</p></div>
+          <div class="oc"><h3>One count, not three.</h3><p>A plate leaves the kitchen and stock knows. No paper tickets to reconcile at close.</p></div>
+          <div class="oc"><h3>Never sell the same hour twice.</h3><p>Bookings come from your team's real hours, on every device at once.</p></div>
           <div class="oc"><h3>Grow beyond your cash.</h3><p>Funders on Brick Fund turn demand into working stock, not paperwork.</p></div>
           <div class="oc"><h3>See it all in one place.</h3><p>Your sourcing, sales, stock, and funding connected — no switching between tools.</p></div>
         </div>
@@ -808,8 +1286,8 @@
           <h2 class="h-lg">Start in three steps.</h2>
         </div>
         <div class="steps reveal">
-          <div class="step"><span class="n">01</span><h4>Set up your business</h4><p>Add your business, pick your categories, and go live in minutes.</p></div>
-          <div class="step"><span class="n">02</span><h4>Stock and sell</h4><p>Source through Brick One's built-in marketplace, then run sales from day one.</p></div>
+          <div class="step"><span class="n">01</span><h4>Set up your business</h4><p>Add your business, pick your categories, switch on what you actually do, and go live in minutes.</p></div>
+          <div class="step"><span class="n">02</span><h4>Stock and sell</h4><p>Source through Brick Business's built-in marketplace, then run sales from day one.</p></div>
           <div class="step"><span class="n">03</span><h4>Grow with funding</h4><p>Get inventory financed by funders on Brick Fund when you're ready to scale beyond your cash.</p></div>
         </div>
       </div>
@@ -829,15 +1307,15 @@
   <section class="closer" id="download">
     <div class="wrap">
       <h2 class="h-lg">Ready when you are.</h2>
-      <p class="lead">Two apps cover your whole business — sourcing, running your day, and funding your growth.</p>
+      <p class="lead">Start with Brick Business. Add the counter, KDS, and diary apps as your business needs them.</p>
       <div class="app-cards">
 
         <div class="app-card">
-          <div class="app-name">Brick One</div>
+          <div class="app-name">Brick Business</div>
           <p class="app-line">Run your day — sourcing, inventory, sales, and finance, all in one app.</p>
           <div class="stores">
-            <a href="https://play.google.com/store/apps/details?id=ng.com.brickapp"><img src="images/google-play-badge.png" alt="Get Brick One on Google Play"></a>
-            <a href="#"><img src="images/app-store-badge.png" alt="Download Brick One on the App Store"></a>
+            <a href="https://play.google.com/store/apps/details?id=ng.com.brickapp"><img src="images/google-play-badge.png" alt="Get Brick Business on Google Play"></a>
+            <a href="#"><img src="images/app-store-badge.png" alt="Download Brick Business on the App Store"></a>
           </div>
         </div>
 
@@ -850,6 +1328,16 @@
           </div>
         </div>
 
+      </div>
+
+      <div class="companions reveal">
+        <h4>Companion apps — coming soon</h4>
+        <p>Same business, same numbers. Each one does a single job well, so the person holding it sees only what they need.</p>
+        <ul>
+          <li style="--c:#2F80ED"><i></i><span><b>Brick POS</b>For the counter. Sell, split payments, cash up.</span></li>
+          <li style="--c:#37474F"><i></i><span><b>Brick KDS</b>The kitchen display. Tickets in, plates out.</span></li>
+          <li style="--c:#6A3D7C"><i></i><span><b>Brick Appointments</b>For the desk. Who's coming and when.</span></li>
+        </ul>
       </div>
     </div>
   </section>
